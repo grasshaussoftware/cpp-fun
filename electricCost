@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+void calcCost(float bulbWattage, float priceKwh, float dailyHrs)
+{
+    float monthlyElectric = (((bulbWattage / 1000) * priceKwh) * dailyHrs) * 30;
+    cout << "Your monthly electrical cost for that bulb is " << monthlyElectric << endl; 
+      
+}
+
+int main()
+{
+    float bulbWattage, priceKwh, dailyHrs;
+    cout << "What is your bulb wattage? " << endl;
+    cin >> bulbWattage;
+    cout << "What is your elctrical price per kilowatt/hour? " << endl;
+    cin >> priceKwh;
+    cout << "How many hours do you run it per day? " << endl;
+    cin >> dailyHrs;
+    calcCost(bulbWattage, priceKwh, dailyHrs);
+    
+    system("pause>0");
+    
+}
