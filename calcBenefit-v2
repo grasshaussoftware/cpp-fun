@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+void calcBenefit(float monthlyBenefit, float yearlyIncrease, float theYear)
+{
+
+    float nextYear = theYear + 1;
+    float newYear = (monthlyBenefit * yearlyIncrease) + monthlyBenefit;
+    cout << "Your adjusted benefit for the year " << nextYear << " will be " << newYear << endl; 
+    
+    monthlyBenefit = newYear;
+    theYear = nextYear;
+    cout << "What is your yearly increase for " << theYear + 1 << endl;
+    cin >> yearlyIncrease;
+    calcBenefit(monthlyBenefit, yearlyIncrease, theYear);
+       
+}
+
+int main()
+{
+
+    float monthlyBenefit, yearlyIncrease, theYear;
+    cout << "What year is it? " << endl;
+    cin >> theYear;
+    cout << "What is your monthly benefit this year? " << endl;
+    cin >> monthlyBenefit;
+    cout << "What is your yearly increase for next year? " << endl;
+    cin >> yearlyIncrease;
+    calcBenefit(monthlyBenefit, yearlyIncrease, theYear);
+}
